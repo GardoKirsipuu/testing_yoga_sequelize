@@ -4,7 +4,7 @@ const app = express();
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse request of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 // connect to database
 const Sequelize = require("sequelize");
@@ -26,6 +26,7 @@ const authorRouter = require('./routes/author')
 app.use('/', articleRouter);
 app.use('/article', articleRouter);
 app.use('/author', authorRouter);
+app.use('admin/article', articleRouter)
 
 
 // listen request
