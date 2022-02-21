@@ -10,6 +10,7 @@ router.get('/', articleController.getAllArticles);
 router.get('/article/:slug', articleController.getArticleBySlug);
 
 router.post('/admin/article/create', articleAdminController.createArticle);
+router.post('/admin/article/edit/:id', articleAdminController.updateArticle);
 
 // export article router for using in default application file
 module.exports = router;
