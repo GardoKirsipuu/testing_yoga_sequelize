@@ -30,7 +30,6 @@ app.use('/author', authorRouter);
 app.use('admin/article', articleRouter);
 app.use('/api', apiRouter);
 
-
 // listen request
 app.listen(3000, () => {
 	console.log('Server is running on http://localhost:3000');
