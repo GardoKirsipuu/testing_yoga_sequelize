@@ -5,7 +5,6 @@ const sequelize = new Sequelize('mysql://root:qwerty@localhost:3306/yoga_sequeli
 // read model data for table representation
 const models = require('../models')
 
-
 // get all data from table
 const getAllArticles = (req, res) => {
 	models.Article.findAll()
