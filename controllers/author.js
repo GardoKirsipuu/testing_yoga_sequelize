@@ -7,14 +7,14 @@ const models = require('../models')
 
 // show article by this slug
 const getArticlesByAuthor = (req, res) => {
-	console.log(req.params.id)
+	//console.log(req.params.id)
 	models.Authors.findByPk(req.params.id, {
 		include: [{
 			model: models.Article
 		}],
 	})
 	.then(author => {
-		console.log(author)
+		//console.log(author)
 		return res.status(200).json({ author });
 	})
 	.catch (error => {

@@ -38,7 +38,7 @@ const getTags = (req, res) => {
 		}],
 	})
 	.then(tags => {
-		console.log(tags)
+		//console.log(tags)
 		return res.status(200).json({ tags });
 	})
 	.catch (error => {

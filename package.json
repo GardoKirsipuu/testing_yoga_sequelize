@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "mochaTest": "mocha"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -18,12 +17,17 @@
   },
   "homepage": "https://github.com/GardoKirsipuu/yoga_sequalize#readme",
   "dependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "express": "^4.17.2",
     "mocha": "^9.2.2",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.16.1"
+    "request": "^2.88.2",
+    "sequelize": "^6.16.1",
+    "superagent": "^7.1.2"
   },
   "devDependencies": {
+    "@types/chai-http": "^4.2.0",
     "sequelize-cli": "^6.4.1"
   }
 }

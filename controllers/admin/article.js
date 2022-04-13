@@ -9,6 +9,7 @@ const models = require('../../models')
 // create new article into data table
 const createArticle = (req, res) => {
 	// get form data
+	let id = req.body.id
 	let name = req.body.name
 	let slug = req.body.slug
 	let image = req.body.image
@@ -19,6 +20,7 @@ const createArticle = (req, res) => {
 		// add values for NOT NULL fields
 		// left one - data table fields
 		// right one - values from form
+		id: id,
 		name: name,
 		slug: slug,
 		image: image,
@@ -27,7 +29,7 @@ const createArticle = (req, res) => {
 		published: new Date().toISOString().slice(0, 19).replace('T', ' ')
 	})
 	.then(article => {
-		console.log(article)
+		// console.log(article)
 		return res.status(200).json({ message: 'New article is added' });
 	})
 	.catch (error => {
@@ -50,7 +52,7 @@ const updateArticle = (req, res) => {
 	},
 	{where: { id: req.params.id }})
 	.then(article => {
-		console.log(article)
+		// console.log(article)
 		return res.status(200).json({ message: 'Article is updated' });
 	})
 	.catch (error => {
@@ -59,15 +61,9 @@ const updateArticle = (req, res) => {
 }
 
 const deleteArticle = (req, res) => {
-	// get form data
-	let name = req.body.name
-	let slug = req.body.slug
-	let image = req.body.image
-	let body = req.body.body
-
 	models.Article.destroy({ where: { id: req.params.id } })
 	.then(article => {
-		console.log(article)
+		//console.log(article)
 		return res.status(200).json({ message: 'Article is deleted' });
 	})
 	.catch (error => {

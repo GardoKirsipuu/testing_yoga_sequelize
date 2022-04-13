@@ -38,7 +38,7 @@ const getAuthor = (req, res) => {
 		}],
 	})
 	.then(author => {
-		console.log(author)
+		//console.log(author)
 		return res.status(200).json({ author });
 	})
 	.catch (error => {
